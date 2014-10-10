@@ -8,3 +8,6 @@ The project ccc-frontend for boundary 196
 + Add Javascript file and document it
 + Link all pages together
 + Deploy it to google APP ENGINE
+
+
++ THE XML url http://courses.illinois.edu/cisapp/explorer/schedule.xml
