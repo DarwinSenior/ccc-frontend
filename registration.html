@@ -11,16 +11,17 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<!-- Latest compiled and minified JavaScript -->
 		<script type="text/javascript" src="bootstrap-3.2.0-dist/js/bootstrap.js"></script>	
+		
 	</head>
 	
 	<body>
-		<div class="jumbotron" style="background-image: url(Foellinger-square-trim.jpg)">
+		<!--<div class="jumbotron" style="background-image: url(Foellinger-square-trim.jpg)">
 			<div class="container">
 				<div class="jumbotron" style="background-color: rgba(255,255,255,0.7)">
 					<h1 class="text-center">University of Illinois at Urbana-Champaign</h1>
 				</div>
 			</div>
-		</div>
+		</div>-->
 		<div class="navbar navbar-custom" role="navigation">
 		  <div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -80,221 +81,316 @@
 			  </ul>
 			  <ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
-				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <span class="caret"></span></a>
-				  <ul class="dropdown-menu" role="menu">
-					<li><a href="#">Profile</a></li>
-					<li><a href="cart.html">Cart</a></li>
-					<li class="divider"></li>
-					<li><a href="#">Logout</a></li>
-				  </ul>
+				  	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <span class="caret"></span></a>
+				  	<ul class="dropdown-menu" role="menu">
+						<li><a href="#">Profile</a></li>
+						<li><a href="cart.html">Cart</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Logout</a></li>
+				  	</ul>
 				</li>
 			  </ul>
 			</div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</div>
 		
-		<div class="container">
-			<div class="page-header">
-				<h1>Registration</h1>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<p>Select Academic Year</p>
-					<select class="form-control">
-						<option>2014-2015</option>
-						<option>2013-2014</option>
-						<option>2012-2013</option>
-					</select>
-				</div>
-				<div class="col-md-6">
-					<p>Select Term</p>
-					<select class="form-control">
-						<option>Fall</option>
-						<option>Spring</option>
-					</select>
+		
+		<div class="jumbotron-orange">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<h1>Registration</h1>
+						<h3>Find your courses and add them to your cart!</h3>
+					</div>
+					<div class="col-md-2"></div>
+					<div class="col-md-4">
+						<img src="illinois-white.png" style="width:25%; height:25%">
+					</div>
 				</div>
 			</div>
 		</div>
-		<br>
-		<div class="container" id="course-list">
-			<p>Add courses</p>
-			<div class="panel-group" id="accordion">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h4 class="panel-title">
-							<a data-toggle="collapse" href="#collapseOne">
-								AAS Asian American Studies
-							</a>
-						</h4>
-					</div>
-					<div id="collapseOne" class="panel-collapse collapse">
-						<div class="panel-body">
-							<ul class="list-group">
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>100 Intro Asian American Studies</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>201 US Racial & Ethnic Politics</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>211 Asian Americans and the Arts</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>258 Muslims in America</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>283 Asian American History</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>287 Food and Asian Americans</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>299 Begin Topics Asian American Studies</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>310 Race and Cultural Diversity</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>390 Intermediate Topics in Asian American Studies</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>397 Asian Families in America</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>490 ADvanced Topics in Asian American Studies</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-									</div>
-								</li>
-							</ul>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-6">
+								<h3>Select Academic Year</h3>
+								<select class="form-control-orange" id="year">
+									<option value="1">--</option>
+									<option value="2">2014-2015</option>
+									<option value="3">2013-2014</option>
+									<option value="4">2012-2013</option>
+								</select>
+							</div>
+							<div class="col-md-6">
+								<h3>Select Term</h3>
+								<select class="form-control-orange" id="term">
+									<option value="1">--</option>
+									<option value="2">Fall</option>
+									<option value="3">Spring</option>
+								</select>
+							</div>
 						</div>
 					</div>
-					</div>
-					<div class="panel panel-default">
-					<div class="panel-heading">
-						<h4 class="panel-title">
-							<a data-toggle="collapse" href="#collapseTwo">
-								ABE Agricultural and Biological Engineering
-							</a>
-						</h4>
-					</div>
-					<div id="collapseTwo" class="panel-collapse collapse">
-						<div class="panel-body">
-							<ul class="list-group">
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>100 Intro Agricultural and Biological Engineering</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+					<br>
+					<div class="container-fluid" id="add-course-section">
+						<h3>Add courses</h3>
+						<div class="form-group">
+							  <input type="text" class="form-control-orange" placeholder="Search for a course">
+						</div>
+						<div class="row">
+							<div class="col-md-1"></div>
+							<div class="col-md-11">
+								<div class="btn-group">
+									<button type="button" class="btn btn-default">A</button>
+									<button type="button" class="btn btn-default">B</button>
+									<button type="button" class="btn btn-default">C</button>
+									<button type="button" class="btn btn-default">D</button>
+									<button type="button" class="btn btn-default">E</button>
+									<button type="button" class="btn btn-default">F</button>
+									<button type="button" class="btn btn-default">G</button>
+									<button type="button" class="btn btn-default">H</button>
+									<button type="button" class="btn btn-default">I</button>
+									<button type="button" class="btn btn-default">J</button>
+									<button type="button" class="btn btn-default">K</button>
+									<button type="button" class="btn btn-default">L</button>
+									<button type="button" class="btn btn-default">M</button>
+									<button type="button" class="btn btn-default">N</button>
+									<button type="button" class="btn btn-default">O</button>
+									<button type="button" class="btn btn-default">P</button>
+									<button type="button" class="btn btn-default">Q</button>
+									<button type="button" class="btn btn-default">R</button>
+									<button type="button" class="btn btn-default">S</button>
+									<button type="button" class="btn btn-default">T</button>
+									<button type="button" class="btn btn-default">U</button>
+									<button type="button" class="btn btn-default">V</button>
+									<button type="button" class="btn btn-default">W</button>
+									<button type="button" class="btn btn-default">X</button>
+									<button type="button" class="btn btn-default">Y</button>
+									<button type="button" class="btn btn-default">Z</button>
+								</div>
+							</div>
+						</div>
+						<br><br>
+						<div class="panel-group" id="course-list">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" href="#collapseOne">
+											AAS Asian American Studies
+										</a>
+									</h4>
+								</div>
+								<div id="collapseOne" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul class="list-group">
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>100 Intro Asian American Studies</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span> Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>201 US Racial & Ethnic Politics</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>211 Asian Americans and the Arts</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>258 Muslims in America</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>283 Asian American History</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>287 Food and Asian Americans</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>299 Begin Topics Asian American Studies</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>310 Race and Cultural Diversity</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>390 Intermediate Topics in Asian American Studies</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>397 Asian Families in America</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>490 Advanced Topics in Asian American Studies</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+										</ul>
 									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>199 Undergraduate Open Seminar</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+								</div>
+								</div>
+								<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" href="#collapseTwo">
+											ABE Agricultural and Biological Engineering
+										</a>
+									</h4>
+								</div>
+								<div id="collapseTwo" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul class="list-group">
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>100 Intro Agricultural and Biological Engineering</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>199 Undergraduate Open Seminar</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>223 ABE Principles: Machine Systems</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>224 ABE Principles: Soil & Water</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>341 Transport Processes in ABE</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>361 Off-Road Machine Design</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>397 Independent Study</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>398 Special Topics</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>430 Project Management</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>440 Applied Statistical Methods I</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-xs-11"><h5>455 Erosion and Sediment Control</h5></div>
+													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+												</div>
+											</li>
+										</ul>
 									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>223 ABE Principles: Machine Systems</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
+								</div>
+								</div>
+								<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" href="#collapseThree">
+											ACCY Accountancy
+										</a>
+									</h4>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse">
+									<div class="panel-body">
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
 									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>224 ABE Principles: Soil & Water</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>341 Transport Processes in ABE</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>361 Off-Road Machine Design</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>397 Independent Study</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>398 Special Topics</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>430 Project Management</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>440 Applied Statistical Methods I</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-									</div>
-								</li>
-								<li class="list-group-item">
-									<div class="row">
-										<div class="col-xs-11"><h5>455 Erosion and Sediment Control</h5></div>
-										<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-									</div>
-								</li>
-							</ul>
+								</div>
+							</div>
 						</div>
 					</div>
-					</div>
-					<div class="panel panel-default">
-					<div class="panel-heading">
-						<h4 class="panel-title">
-							<a data-toggle="collapse" href="#collapseThree">
-								ACCY Accountancy
-							</a>
-						</h4>
-					</div>
-					<div id="collapseThree" class="panel-collapse collapse">
-						<div class="panel-body">
-							Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+				</div>
+				<div class="col-md-4">
+					<div class="container-fluid">
+						<br>
+						<div class="panel panel-primary">
+							<!-- Default panel contents -->
+							<div class="panel-heading">
+								<h3>Your Courses</h3>
+							</div>
+
+							<!-- Table -->
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>Course Name</th>
+										<th>Credit Hours</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Intermediate Topics in Asian American Studies</td>
+										<td>4.0</td>
+										<td><button class="btn btn-danger pull-right"><span class="glyphicon glyphicon-remove"></span></button></td>
+									</tr>
+									<tr>
+										<td>Course 2</td>
+										<td>3.0</td>
+										<td><button class="btn btn-danger pull-right"><span class="glyphicon glyphicon-remove"></span></button></td>
+									</tr>
+							</table>
+							<h3 class="text-center">Credit Total:</h3>
+							<button class="btn btn-lg btn-block btn-default">Manually create schedule</button>
+							<button class="btn btn-lg btn-block btn-primary">Automatically create schedule</button>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
 	</body>
 </html>
