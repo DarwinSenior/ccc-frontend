@@ -27,20 +27,20 @@
 				    weekends: false,
 				    defaultView: 'agendaWeek',
 				    minTime: '08:00:00',
-				    maxTime: '23:00:00',
+				    maxTime: '22:00:00',
 				    slotDuration: '00:15:00',
 				    allDaySlot: false,
 					editable: true,
-					aspectRatio: 1.408
+					aspectRatio: 1.507
 				});
 				
 			};
 
 			$(document).ready(function() {
-				$("#navbar").load("navbar.html #bar");
+				$("#navbar").load("component_files/navbar.html #bar");
 				
-				$("#detail-display").load("schedule_views/detail.html #loadThis");
-				$("#concise-display").load("schedule_views/concise.html #loadThis");
+				$("#detail-display").load("component_files/detail.html #loadThis");
+				$("#concise-display").load("component_files/concise.html #loadThis");
 		   		$("#concise-display").hide();
 		   		$("#detail-display").hide();
 				createCalendar();
