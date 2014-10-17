@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>University of Illinois Scheduler</title>
+		<!-- Latest compiled and minified CSS-->
+		<link rel="stylesheet" href="bootstrap-3.2.0-dist/css/bootstrap.css">
+		<link rel="stylesheet" href="bootstrap-3.2.0-dist/css/custom.css">
+		<link rel="stylesheet" href="bootstrap-3.2.0-dist/css/bootstrap-theme.css">
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="bootstrap-3.2.0-dist/js/bootstrap.js"></script>
+
+		<link rel="stylesheet" href="fullcalendar/fullcalendar.min.css">
+		<script src="fullcalendar/lib/moment.min.js"></script>
+
+		<script src="fullcalendar/fullcalendar.min.js"></script>
+		
+		<script>
+			var createCalendar = function() {
+				$('#week-display').fullCalendar({
+					header: {
+						left: '',
+						center: '',
+						right: ''
+					},
+				    weekends: false,
+				    defaultView: 'agendaWeek',
+				    minTime: '08:00:00',
+				    maxTime: '23:00:00',
+				    slotDuration: '00:15:00',
+				    allDaySlot: false,
+					editable: true,
+					aspectRatio: 1.408
+				});
+				
+			};
+
+			$(document).ready(function() {
+				$("#navbar").load("navbar.html #bar");
+				
+				$("#detail-display").load("schedule_views/detail.html #loadThis");
+				$("#concise-display").load("schedule_views/concise.html #loadThis");
+		   		$("#concise-display").hide();
+		   		$("#detail-display").hide();
+				createCalendar();
+				
+			   	$("#concise").click(function() {
+			   		$("#concise-display").show();
+			   		$("#detail-display").show();
+			   		$("#week-display").hide();
+			   	});
+			   	$("#week").click(function() {
+			   		$("#concise-display").hide();
+			   		$("#detail-display").hide();
+			   		$("#week-display").show();
+			   		$("#week-display").fullCalendar('render');
+			   	});
+			   	$("#detail").click(function() {
+			   		$("#concise-display").hide();
+			   		$("#detail-display").show();
+			   		$("#week-display").hide();
+			   	});
+			 });
+		</script>
+	</head>
+
+	<body>
+		<div id="navbar"></div>
+
+		<div class="jumbotron-orange">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<h1>Student Schedule</h1>
+						<h3>View and make changes to your existing schedule</h3>
+					</div>
+					<div class="col-md-2"></div>
+					<div class="col-md-4">
+						<img src="illinois-white.png" style="width:25%; height:25%">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<ul class="nav nav-tabs nav-justified" role="tablist">
+				<li class="active" data-toggle="tab"><a href="#" id="week">Week at a glance</a></li>
+				<li><a href="#" id="concise" data-toggle="tab">Concise</a></li>
+				<li><a href="#" id="detail" data-toggle="tab">Detailed</a></li>
+			</ul>
+		</div>
+		<br>
+		<div class="container-fluid">
+			<div id="week-display"></div>
+			<div id="concise-display"></div>
+			<div id="detail-display"></div>
+			<br>
+			<div class="container">
+				<button class="btn btn-lg btn-block btn-default">Add/Drop Classes</button>
+				<button class="btn btn-lg btn-block btn-primary">Change Credit Hours</button>
+			</div>
+		</div>
+	</body>
+</html>
