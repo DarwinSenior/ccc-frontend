@@ -11,10 +11,10 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="bootstrap-3.2.0-dist/js/bootstrap.js"></script>
 
-		<link rel="stylesheet" href="fullcalendar/fullcalendar.min.css">
+		<link rel="stylesheet" href="fullcalendar/fullcalendar.css">
 		<script src="fullcalendar/lib/moment.min.js"></script>
 
-		<script src="fullcalendar/fullcalendar.min.js"></script>
+		<script src="fullcalendar/fullcalendar.js"></script>
 		
 		<script>
 			var createCalendar = function() {
@@ -30,17 +30,19 @@
 				    maxTime: '22:00:00',
 				    slotDuration: '00:15:00',
 				    allDaySlot: false,
-					editable: true,
-					aspectRatio: 1.507
+					editable: false,
+					aspectRatio: 1.505,
+					columnFormat: {
+						week: 'ddd'
+					},
 				});
-				
 			};
 
 			$(document).ready(function() {
-				$("#navbar").load("component_files/navbar.html #bar");
+				$("#navbar").load("component_files/navbar.html");
 				
-				$("#detail-display").load("component_files/detail.html #loadThis");
-				$("#concise-display").load("component_files/concise.html #loadThis");
+				$("#detail-display").load("component_files/detail.html");
+				$("#concise-display").load("component_files/concise.html");
 		   		$("#concise-display").hide();
 		   		$("#detail-display").hide();
 				createCalendar();
@@ -61,6 +63,68 @@
 			   		$("#detail-display").show();
 			   		$("#week-display").hide();
 			   	});
+
+
+			   	$('#week-display').fullCalendar( 'addEventSource', function(start, end, timezone, callback) {
+			        var events = [];
+			        var daysOfWeek = "MTWRFSU";
+			        var months = {"Jan":0, "Feb":1, "Mar":2, "Apr":3, "May":4, "Jun":5, "Jul":6, "Aug":7, "Sep":8, "Oct":9, "Nov":10, "Dec":11};
+			        var one_day = (24 * 60 * 60 * 1000);
+			        var colors = ["#878701", //dark yellow
+			        				"#003366", //dark blue
+			        				"#298A0E", //med green
+			        				"#60665F", //grey
+			        				"#E0110D", //med red
+			        				"#0D9194", //grey blue
+			        				"#4F0157", //dark purple
+			        				"#6B4E1D", //dark brown
+			        				"#FF8000", //med orange
+			        				"#0778F2", //lighter blue
+			        				"#17CF06", //lighter green
+			        				"#BE06CF", //lighter purple
+			        				"#000000" //black
+			        				]
+
+				   	$.getJSON("component_files/schedule.json", function(data) {
+						$.each(data, function(i, element) {	//go through each class in the array 
+					        for (loop = start.valueOf(); loop <= end.valueOf(); loop = loop + one_day) {
+					            var column_date = new moment(loop);
+					            var splitEndDate = data[i].End.split(' ');
+					            var splitStartDate = data[i].Start.split(' ');
+					            var endDate = new moment( {year: splitEndDate[2], month: months[splitEndDate[0]], day: splitEndDate[1].substring(0, splitEndDate[1].indexOf(','))} );
+					            var startDate = new moment( {year: splitStartDate[2], month: months[splitStartDate[0]], day: splitStartDate[1].substring(0, splitStartDate[1].indexOf(','))} );
+
+					            //check if current class is scheduled for the current day and if the day is within the start and end date of the class
+					            if (data[i].Days.indexOf(daysOfWeek.charAt(column_date.isoWeekday() - 1)) > -1 && column_date.isBefore(endDate) && column_date.isAfter(startDate)) {
+					            	var s = data[i].Time.split(" - ")[0];																			
+					            	var e = data[i].Time.split(" - ")[1];
+					            	
+					            	var s_hour = s.substring(0, s.indexOf(':'));
+					            	var e_hour = e.substring(0, e.indexOf(':'));
+					            	var s_min = s.substring(s.indexOf(':') + 1, s.indexOf(' '));
+					            	var e_min = e.substring(e.indexOf(':') + 1, e.indexOf(' '));
+
+					                var startTime = column_date.hour(Number(s_hour) + ((s.indexOf('p') > -1 && s_hour != 12)?12:0)).minute(s_min).format();
+					                var endTime = column_date.hour(Number(e_hour) + ((e.indexOf('p') > -1 && e_hour != 12)?12:0)).minute(e_min).format();
+					                startTime = startTime.substring(0, startTime.length - 6);
+					                endTime = endTime.substring(0, endTime.length - 6);
+
+					                events.push({
+					                    title: data[i].Course + "\n" + data[i].CRN + "\n" + data[i].Location + "\n" + data[i].Instructor,
+					                    start: startTime,
+					                    end: endTime,
+					                    allDay: false,
+					                    backgroundColor: colors[i],
+					                    borderColor: colors[i]
+					                });
+				            	}
+					        } // for loop
+						});
+
+				        callback(events);
+					});
+			        
+			    });				
 			 });
 		</script>
 	</head>
@@ -86,8 +150,8 @@
 		<div class="container-fluid">
 			<ul class="nav nav-tabs nav-justified" role="tablist">
 				<li class="active" data-toggle="tab"><a href="#" id="week">Week at a glance</a></li>
-				<li><a href="#" id="concise" data-toggle="tab">Concise</a></li>
-				<li><a href="#" id="detail" data-toggle="tab">Detailed</a></li>
+				<li><a href="#" id="concise" data-toggle="tab">Concise View</a></li>
+				<li><a href="#" id="detail" data-toggle="tab">Detailed View</a></li>
 			</ul>
 		</div>
 		<br>
