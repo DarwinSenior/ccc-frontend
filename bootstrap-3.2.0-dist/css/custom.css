@@ -156,3 +156,6 @@
 .panel-darkBlue > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #003366;
 }
+.fc-event-time {
+  display: none;
+}

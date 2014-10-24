@@ -11,10 +11,10 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="bootstrap-3.2.0-dist/js/bootstrap.js"></script>
 
-		<link rel="stylesheet" href="fullcalendar/fullcalendar.css">
+		<link rel="stylesheet" href="fullcalendar/fullcalendar.min.css">
 		<script src="fullcalendar/lib/moment.min.js"></script>
 
-		<script src="fullcalendar/fullcalendar.js"></script>
+		<script src="fullcalendar/fullcalendar.min.js"></script>
 		
 		<script>
 			var createCalendar = function() {
@@ -36,6 +36,16 @@
 						week: 'ddd'
 					},
 				});
+			};
+			var getObjectKeyIndex = function(obj, keyToFind) {
+			    var i = 0, key;
+			    for (key in obj) {
+			        if (key == keyToFind) {
+			            return i;
+			        }
+			        i++;
+			    }
+			    return null;
 			};
 
 			$(document).ready(function() {
@@ -64,29 +74,21 @@
 			   		$("#week-display").hide();
 			   	});
 
-
 			   	$('#week-display').fullCalendar( 'addEventSource', function(start, end, timezone, callback) {
 			        var events = [];
 			        var daysOfWeek = "MTWRFSU";
 			        var months = {"Jan":0, "Feb":1, "Mar":2, "Apr":3, "May":4, "Jun":5, "Jul":6, "Aug":7, "Sep":8, "Oct":9, "Nov":10, "Dec":11};
 			        var one_day = (24 * 60 * 60 * 1000);
-			        var colors = ["#878701", //dark yellow
-			        				"#003366", //dark blue
-			        				"#298A0E", //med green
-			        				"#60665F", //grey
-			        				"#E0110D", //med red
-			        				"#0D9194", //grey blue
-			        				"#4F0157", //dark purple
-			        				"#6B4E1D", //dark brown
-			        				"#FF8000", //med orange
-			        				"#0778F2", //lighter blue
-			        				"#17CF06", //lighter green
-			        				"#BE06CF", //lighter purple
-			        				"#000000" //black
-			        				]
+			        var colors = [	["#2BE800", "#AAEC9B", "#22B500", "#316824"], 	//GREEN
+			        				["#FFC20D", "#FFECB5", "#CC9B0A", "#7F6C32"], 	//ORANGE
+			        				["#E81B00", "#ECA59B", "#B51500", "#680C00"],	//RED
+			        				["#7200FF", "#CFA8FF", "#512C7F", "#39007F"],	//PURPLE
+			        				["#00CCFF", "#A8EEFF", "#2C6F7F", "#00667F"] ]	//TEAL
+
+			        var sched = {};
 
 				   	$.getJSON("component_files/schedule.json", function(data) {
-						$.each(data, function(i, element) {	//go through each class in the array 
+						$.each(data, function(i, element) {	//go through each class in the array
 					        for (loop = start.valueOf(); loop <= end.valueOf(); loop = loop + one_day) {
 					            var column_date = new moment(loop);
 					            var splitEndDate = data[i].End.split(' ');
@@ -109,21 +111,30 @@
 					                startTime = startTime.substring(0, startTime.length - 6);
 					                endTime = endTime.substring(0, endTime.length - 6);
 
+					                if(data[i].Subject in sched)	//check if course exists in our list
+					                {
+					                	if(sched[data[i].Subject].indexOf(data[i].Course) == -1) {	//check if class is not in list
+					                		sched[data[i].Subject].push(data[i].Course);	//add the class to the course's class array
+					                	}
+					                }
+					                else	//new course new class array
+					                {
+					                	sched[data[i].Subject] = [data[i].Course];
+					                }
+
 					                events.push({
-					                    title: data[i].Course + "\n" + data[i].CRN + "\n" + data[i].Location + "\n" + data[i].Instructor,
+					                    title: data[i].Subject + " " + data[i].Course + " " + data[i].Section + "\n" + data[i].Location,
 					                    start: startTime,
 					                    end: endTime,
 					                    allDay: false,
-					                    backgroundColor: colors[i],
-					                    borderColor: colors[i]
+					                    color: colors[getObjectKeyIndex(sched, data[i].Subject)][sched[data[i].Subject].indexOf(data[i].Course)],
 					                });
 				            	}
-					        } // for loop
+					        }
 						});
 
 				        callback(events);
 					});
-			        
 			    });				
 			 });
 		</script>

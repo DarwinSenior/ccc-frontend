@@ -5,9 +5,20 @@
 			$.each(data, function(i, element) {
 				$.each(data[i], function(key, value) {
 					if(key=="CRN") {
-						output += "<tr>";
+						output += "<tr><td>" + value + "</td>";
 					}
-					output += "<td>" + value + "</td>";
+					else if(key=="Subject") {
+						output += "<td>" + value;
+					}
+					else if(key=="Course") {
+						output += " " + value + " ";
+					}
+					else if(key=="Section") {
+						output += " " + value + "</td>";
+					}
+					else {
+						output += "<td>" + value + "</td>";
+					}
 					if(key=="Instructor") {
 						output += "</tr>";
 					}
