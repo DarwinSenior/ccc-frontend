@@ -11,35 +11,6 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script type="text/javascript" src="bootstrap-3.2.0-dist/js/bootstrap.js"></script>	
 		<script>
-			/*simpleAJAXLib = {
-		        init: function (url) {
-		            this.fetchJSON(url);
-		        },
-		 
-		        fetchJSON: function (url) {
-		            var root = 'https://query.yahooapis.com/v1/public/yql?q=';
-		            var yql = 'select * from xml where url="' + url + '"';
-		            var proxy_url = root + encodeURIComponent(yql) + '&format=json&diagnostics=false&callback=simpleAJAXLib.display';
-		            document.getElementsByTagName('body')[0].appendChild(this.jsTag(proxy_url));
-		        },
-		 
-		        jsTag: function (url) {
-		            var script = document.createElement('script');
-		            script.setAttribute('type', 'text/javascript');
-		            script.setAttribute('src', url);
-		            return script;
-		        },
-		 
-		        display: function (results) {
-		            // do the necessary stuff
-
-		            document.getElementById('test').innerHTML = "Result = " + (results.error ? "Brah We Fucked Up..... $wagPhysh!" : JSON.stringify(results.query.results));
-		        }
-		    }
-			$(document).ready(function(){
-			 	simpleAJAXLib.init('http://courses.illinois.edu/cisapp/explorer/schedule.xml');
-			 });*/
-
 			$(document).ready(function() {
 			   	$("#navbar").load("component_files/navbar.html");
 			 });
