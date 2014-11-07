@@ -9,11 +9,10 @@
 		
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<!-- Latest compiled and minified JavaScript -->
-		<script type="text/javascript" src="bootstrap-3.2.0-dist/js/bootstrap.js"></script>	
+		<script src="bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>	
+		<script src="./js/scheduling.js"></script>
 		<script>
-			$(document).ready(function() {
-			   	$("#navbar").load("component_files/navbar.html");
-			 });
+			
 		</script>
 	</head>
 	
@@ -35,69 +34,126 @@
 			</div>
 		</div>
 
-		<div class="container-fluid">
+		<div class="container">
 			<div class="row">
-				<div class="col-md-8">
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-md-6">
-								<h3>Select Academic Year</h3>
-								<select class="form-control-orange" id="year">
-									<option value="1">--</option>
-									<option value="2">2015</option>
-									<option value="3">2014</option>
-									<option value="4">2013</option>
-									<option value="5">2012</option>
-								</select>
-							</div>
-							<div class="col-md-6">
-								<h3>Select Term</h3>
-								<select class="form-control-orange" id="term">
-									<option value="1">--</option>
-									<option value="2">Fall</option>
-									<option value="3">Spring</option>
-								</select>
-							</div>
-						</div>
-					</div>
-					<br>
-					<div class="container-fluid" id="add-course-section">
-						<h3>Add Courses</h3>
+				<div class="col-md-6">
+					<h3>Select Academic Year</h3>
+					<select class="form-control-orange" id="year">
+						<option value="1">--</option>
+						<option value="2">2015</option>
+						<option value="3">2014</option>
+						<option value="4">2013</option>
+						<option value="5">2012</option>
+					</select>
+				</div>
+				<div class="col-md-6">
+					<h3>Select Term</h3>
+					<select class="form-control-orange" id="term">
+						<option value="1">--</option>
+						<option value="2">Fall</option>
+						<option value="3">Spring</option>
+					</select>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<button type="button" class="btn btn-primary btn-lg btn-block" id="search-button">Search for Courses</button>
+				</div>
+			</div>
+			<br>
+			<div class="alert alert-danger" role="alert" id="selection-warning">Please select both an <strong>academic year</strong> and a <strong>term</strong></div>
+		</div>
+
+		<br>
+
+		<div class="jumbotron" id="add-course-section" style="background-color: #C2C2C2">
+			<div class="container">
+				<h2 id="course-search-title"></h2>
+				<div class="row">
+					<div class="col-md-7">
 						<div class="form-group">
-							  <input type="text" class="form-control-orange" placeholder="Search for a course">
+							  <input type="text" class="form-control-orange" placeholder="Search for a course" id="searchBar">
 						</div>
-						<br>
-						<div class="row">
-							<div class="col-md-1"></div>
-							<div class="col-md-11">
-								<div class="btn-group">
-									<button type="button" class="btn btn-default">A</button>
-									<button type="button" class="btn btn-default">B</button>
-									<button type="button" class="btn btn-default">C</button>
-									<button type="button" class="btn btn-default">D</button>
-									<button type="button" class="btn btn-default">E</button>
-									<button type="button" class="btn btn-default">F</button>
-									<button type="button" class="btn btn-default">G</button>
-									<button type="button" class="btn btn-default">H</button>
-									<button type="button" class="btn btn-default">I</button>
-									<button type="button" class="btn btn-default">J</button>
-									<button type="button" class="btn btn-default">K</button>
-									<button type="button" class="btn btn-default">L</button>
-									<button type="button" class="btn btn-default">M</button>
-									<button type="button" class="btn btn-default">N</button>
-									<button type="button" class="btn btn-default">O</button>
-									<button type="button" class="btn btn-default">P</button>
-									<button type="button" class="btn btn-default">Q</button>
-									<button type="button" class="btn btn-default">R</button>
-									<button type="button" class="btn btn-default">S</button>
-									<button type="button" class="btn btn-default">T</button>
-									<button type="button" class="btn btn-default">U</button>
-									<button type="button" class="btn btn-default">V</button>
-									<button type="button" class="btn btn-default">W</button>
-									<button type="button" class="btn btn-default">X</button>
-									<button type="button" class="btn btn-default">Y</button>
-									<button type="button" class="btn btn-default">Z</button>
-								</div>
+						<div class="btn-group btn-group-justified">
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">A</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">B</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">C</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">D</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">E</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">F</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">G</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">H</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">I</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">J</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">K</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">L</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">M</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">N</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">O</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">P</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">Q</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">R</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">S</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">T</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">U</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">V</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">W</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">X</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">Y</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default">Z</button>
 							</div>
 						</div>
 						<br><br>
@@ -106,91 +162,72 @@
 								<div class="panel-heading">
 									<h4 class="panel-title">
 										<a data-toggle="collapse" href="#collapseOne">
-											AAS Asian American Studies
+											Asian American Studies
 										</a>
 									</h4>
 								</div>
 								<div id="collapseOne" class="panel-collapse collapse">
 									<div class="panel-body">
-										<ul class="list-group">
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-1"><h5>100</h5></div>
-													<div class="col-xs-10"><h5>Intro Asian American Studies</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-1"><h5>201</h5></div>
-													<div class="col-xs-10"><h5>US Racial & Ethnic Politics</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-1"><h5>211</h5></div>
-													<div class="col-xs-10"><h5>Asian Americans and the Arts</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-1"><h5>258</h5></div>
-													<div class="col-xs-10"><h5>Muslims in America</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-1"><h5>283</h5></div>
-													<div class="col-xs-10"><h5>Asian American History</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-1"><h5>287</h5></div>
-													<div class="col-xs-10"><h5>287 Food and Asian Americans</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-1"><h5>299</h5></div>
-													<div class="col-xs-10"><h5>Beginner Topics in Asian American Studies</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-1"><h5>310</h5></div>
-													<div class="col-xs-10"><h5>Race and Cultural Diversity</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-1"><h5>390</h5></div>
-													<div class="col-xs-10"><h5>Intermediate Topics in Asian American Studies</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-1"><h5>397</h5></div>
-													<div class="col-xs-10"><h5>Asian Families in America</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-1"><h5>490</h5></div>
-													<div class="col-xs-10"><h5>Advanced Topics in Asian American Studies</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-										</ul>
+										<table class="table">
+											<thead>
+												<tr>
+													<th>Select</th>
+													<th>Course Number</th>
+													<th>Course Title</th>
+													<th>Credits</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td>AAS 100</td>
+													<td>Intro Asian American Studies</td>
+													<td>3.000</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td>AAS 120</td>
+													<td>Intro to Asian American Pop Culture</td>
+													<td>3.000</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td>AAS 215</td>
+													<td>US Citizenship Comparatively</td>
+													<td>3.000</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td>AAS 250</td>
+													<td>Asian American Ethnic Groups</td>
+													<td>3.000</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td>AAS 265</td>
+													<td>Politics of Hip Hop</td>
+													<td>3.000</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td>AAS 281</td>
+													<td>Constructing Race in America</td>
+													<td>3.000</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td>AAS 283</td>
+													<td>Asian American History</td>
+													<td>3.000</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td>AAS 286</td>
+													<td>Asian American Literature</td>
+													<td>3.000</td>
+												</tr>
+											</tbody>
+										</table>
 									</div>
 								</div>
 							</div>
@@ -198,80 +235,72 @@
 								<div class="panel-heading">
 									<h4 class="panel-title">
 										<a data-toggle="collapse" href="#collapseTwo">
-											ABE Agricultural and Biological Engineering
+											Agricultural and Biological Engineering
 										</a>
 									</h4>
 								</div>
 								<div id="collapseTwo" class="panel-collapse collapse">
 									<div class="panel-body">
-										<ul class="list-group">
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-11"><h5>100 Intro Agricultural and Biological Engineering</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-11"><h5>199 Undergraduate Open Seminar</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-11"><h5>223 ABE Principles: Machine Systems</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-11"><h5>224 ABE Principles: Soil & Water</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-11"><h5>341 Transport Processes in ABE</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-11"><h5>361 Off-Road Machine Design</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-11"><h5>397 Independent Study</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-11"><h5>398 Special Topics</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-11"><h5>430 Project Management</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-11"><h5>440 Applied Statistical Methods I</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-xs-11"><h5>455 Erosion and Sediment Control</h5></div>
-													<div class="col-xs-1"><button type="button" class="btn btn-success">Add</button></div>
-												</div>
-											</li>
-										</ul>
+										<table class="table">
+											<thead>
+												<tr>
+													<th>Select</th>
+													<th>Course Number</th>
+													<th>Course Title</th>
+													<th>Credits</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td>ABE 141</td>
+													<td>ABE Principles: Biological</td>
+													<td>2.000</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td>ABE 199</td>
+													<td>Undergraduate Open Seminar</td>
+													<td>5.000</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td>ABE 225</td>
+													<td>ABE Principles: Bioenvironment</td>
+													<td>2.000</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td>ABE 226</td>
+													<td>ABE Principles: Bioprocessing</td>
+													<td>2.000</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td>ABE 374</td>
+													<td>Environ Control for Buildings</td>
+													<td>3.000</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td>ABE 397</td>
+													<td>Independent Study</td>
+													<td>4.000</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td>ABE 398</td>
+													<td>Special Topics</td>
+													<td>3.000</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td>ABE 425</td>
+													<td>Engrg Measurement Systems</td>
+													<td>4.000</td>
+												</tr>
+											</tbody>
+										</table>
 									</div>
 								</div>
 							</div>
@@ -279,7 +308,7 @@
 								<div class="panel-heading">
 									<h4 class="panel-title">
 										<a data-toggle="collapse" href="#collapseThree">
-											ACCY Accountancy
+											Accountancy
 										</a>
 									</h4>
 								</div>
@@ -291,44 +320,33 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="container-fluid">
-						<br>
-						<div class="panel-hard panel-darkBlue">
-							<!-- Default panel contents -->
-							<div class="panel-heading" style="border-top-left-radius: 0px; border-top-right-radius: 0px">
-								<div class="panel-title" style="font-size: 25px">Your Courses</div>
-							</div>
+					<div class="col-md-5">
+						<div class="container-fluid">
+							<div class="panel-hard panel-darkBlue">
+								<!-- Default panel contents -->
+								<div class="panel-heading" style="border-top-left-radius: 0px; border-top-right-radius: 0px">
+									<div class="panel-title" style="font-size: 25px">Your Courses</div>
+								</div>
 
-							<!-- Table -->
-							<table class="table table-hover">
-								<thead>
-									<tr>
-										<th>Course Name</th>
-										<th>Credit Hours</th>
-										<th></th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Intermediate Topics in Asian American Studies</td>
-										<td>4.0</td>
-										<td><button class="btn btn-xs btn-danger pull-right"><span class="glyphicon glyphicon-remove"></span></button></td>
-									</tr>
-									<tr>
-										<td>Course 2</td>
-										<td>3.0</td>
-										<td><button class="btn btn-xs btn-danger pull-right"><span class="glyphicon glyphicon-remove"></span></button></td>
-									</tr>
-									<tr>
-										<td><h3>Credit Total:</h3></td>
-										<td><h3>7.0</h3></td>
-										<td></td>
-							</table>
-							
-							<a href="manual.html" class="btn btn-lg btn-block btn-default" style="border-radius: 0px">Manually create schedule</a>
-							<a href="auto.html" class="btn btn-lg btn-block btn-primary" style="border-radius: 0px">Automatically create schedule</a>
+								<!-- Table -->
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>Course Name</th>
+											<th>Credit Hours</th>
+										</tr>
+									</thead>
+									<tbody id="selected-courses-table">
+										<tr>
+											<td><h3>Credit Total:</h3></td>
+											<td><h3 id="credit-total">0.0</h3></td>
+										</tr>
+									</tbody>
+								</table>
+								
+								<a href="manual.html" class="btn btn-lg btn-block btn-default" style="border-radius: 0px" id="manual-button" disabled="disabled">Manually create schedule</a>
+								<a href="auto.html" class="btn btn-lg btn-block btn-primary" style="border-radius: 0px" id="auto-button" disabled="disabled">Automatically create schedule</a>
+							</div>
 						</div>
 					</div>
 				</div>

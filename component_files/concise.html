@@ -1,31 +1,57 @@
 <script>
 	$(document).ready(function() {
+
+		var output = "";
+
 		$.getJSON("component_files/schedule.json", function(data) {
-			var output = "";
+			var table = [];
+			var newRow;
+
 			$.each(data, function(i, element) {
+				newRow = {"CRN": "",
+						"Course": "",
+						"Title": "",
+						"Campus": "",
+						"Credits": "",
+						"Level": "",
+						"Start": "",
+						"End": "",
+						"Days": "",
+						"Time": "",
+						"Location": "",
+						"Instructor": ""};
+
 				$.each(data[i], function(key, value) {
-					if(key=="CRN") {
-						output += "<tr><td>" + value + "</td>";
-					}
-					else if(key=="Subject") {
-						output += "<td>" + value;
+					if(key=="Subject") {
+						newRow["Course"] = "<td>" + value;
 					}
 					else if(key=="Course") {
-						output += " " + value + " ";
+						newRow["Course"] += " " + value + " ";
 					}
 					else if(key=="Section") {
-						output += " " + value + "</td>";
+						newRow["Course"] += value + "</td>";
 					}
 					else {
-						output += "<td>" + value + "</td>";
-					}
-					if(key=="Instructor") {
-						output += "</tr>";
+						newRow[key] = "<td>" + value + "</td>";
 					}
 				});
+
+				table.push(newRow);
 			});
+			
+			//console.log(table);
+
+			for(i = 0; i < table.length; i++) {
+				output += "<tr>"
+				for(key in table[i])
+					output += table[i][key];
+
+				output += "</tr>";
+			}
 			document.getElementById("tableBody").innerHTML = output;
 		});
+
+		
 	});
 	
 </script>
