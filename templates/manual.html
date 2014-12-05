@@ -1,0 +1,176 @@
+{% extends 'template.html' %}
+{% block additional_sources %}
+<script src="{{ url_for('static', filename='custom/manual.js') }}"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='fullcalendar/fullcalendar.min.css') }}">
+<script src="{{ url_for('static', filename='fullcalendar/lib/moment.min.js') }}"></script>
+<script src="{{ url_for('static', filename='fullcalendar/fullcalendar.min.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<body>
+	<script>
+		setDefaultDate("2015-01-20");
+	</script>
+
+	<div class="jumbotron-orange">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<h1>Create Schedule</h1>
+					<h3>Choose your classes</h3>
+				</div>
+				<div class="col-md-2"></div>
+				<div class="col-md-4">
+					<img src="{{ url_for('static', filename='illinois-white.png') }}" style="width:25%; height:25%">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6">
+				<br><br>
+				<div class="panel-group" id="course-list">
+					<div class="panel panel-darkBlue">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#collapseOne">
+									AAS 100 - Intro Asian American Studies
+								</a>
+							</h4>
+						</div>
+						<div id="collapseOne" class="panel-collapse collapse">
+							<div class="panel-body">
+								<p>Interdisciplinary introduction to the basic concepts and approaches in Asian American Studies. Surveys the various dimensions of Asian American experiences including history, social organization, literature, arts, and politics.</p>
+								<p><b>Attributes</b></p>
+								<ul>
+									<li>UIUC: Social Sciences</li>
+									<li>UIUC: US Minority Culture(s)</li>
+								</ul>
+							</div>
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Select</th>
+										<th>CRN</th>
+										<th>Section</th>
+										<th>Credits</th>
+										<th>Days</th>
+										<th>Time</th>
+										<th>Cap</th>
+										<th>Actual</th>
+										<th>Remaining</th>
+										<th>Instructor</th>
+										<th>Date</th>
+										<th>Location</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><input type="checkbox" id="AAS-100-0"></td>
+										<td>30107</td>
+										<td>AD1</td>
+										<td>3.000</td>
+										<td>W</td>
+										<td>01:00 pm - 01:50 pm</td>
+										<td>35</td>
+										<td>0</td>
+										<td>35</td>
+										<td>Merin A. Thomas (P), Lisa Marie Cacho</td>
+										<td>01/20-05/06</td>
+										<td>1DKH 212</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" id="AAS-100-1"></td>
+										<td>41729</td>
+										<td>AD2</td>
+										<td>3.000</td>
+										<td>W</td>
+										<td>02:00 pm - 02:50 pm</td>
+										<td>35</td>
+										<td>0</td>
+										<td>35</td>
+										<td>Merin A. Thomas (P), Lisa Marie Cacho</td>
+										<td>01/20-05/06</td>
+										<td>1DKH 212</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<div class="panel panel-darkBlue">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#collapseTwo">
+									CS 225 - Data Structures
+								</a>
+							</h4>
+						</div>
+						<div id="collapseTwo" class="panel-collapse collapse">
+							<div class="panel-body">
+								<p>Data abstractions: elementary data structures (lists, stacks, queues, and trees) and their implementation using an object-oriented programming language. Solutions to a variety of computational problems such as search on graphs and trees. Elementary analysis of algorithms.</p>
+								<p><b>Attributes</b></p>
+								<ul>
+									<li>UIUC: Quant Reasoning II</li>
+								</ul>
+							</div>
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Select</th>
+										<th>CRN</th>
+										<th>Section</th>
+										<th>Credits</th>
+										<th>Days</th>
+										<th>Time</th>
+										<th>Cap</th>
+										<th>Actual</th>
+										<th>Remaining</th>
+										<th>Instructor</th>
+										<th>Date</th>
+										<th>Location</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><input type="checkbox" id="CS-225-3"></td>
+										<td>31208</td>
+										<td>AL1</td>
+										<td>4.000</td>
+										<td>MWF</td>
+										<td>11:00 am - 11:50 am</td>
+										<td>400</td>
+										<td>0</td>
+										<td>400</td>
+										<td>Cinda Heeren (P), Ganna Yershova</td>
+										<td>01/20-05/06</td>
+										<td>1ECEB 1002</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" id="CS-225-4"></td>
+										<td>31218</td>
+										<td>AYB</td>
+										<td>0.000</td>
+										<td>W</td>
+										<td>07:00 pm - 08:50 pm</td>
+										<td>42</td>
+										<td>0</td>
+										<td>42</td>
+										<td>Cinda Heeren (P), Ganna Yershova</td>
+										<td>01/20-05/06</td>
+										<td>1SIEBL 0224</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6" id="calendar">
+			</div>
+		</div>
+	</div>
+</body>
+{% endblock %}

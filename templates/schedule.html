@@ -1,0 +1,68 @@
+{% extends 'template.html' %}
+{% block additional_sources %}
+<link rel="stylesheet" href="{{ url_for('static', filename='fullcalendar/fullcalendar.min.css') }}">
+<script src="{{ url_for('static', filename='fullcalendar/lib/moment.min.js') }}"></script>
+<script src="{{ url_for('static', filename='fullcalendar/fullcalendar.min.js') }}"></script>
+<script src="{{ url_for('static', filename='custom/schedule.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron-orange">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h1>Student Schedule</h1>
+				<h3>View and make changes to your existing schedule</h3>
+			</div>
+			<div class="col-md-2"></div>
+			<div class="col-md-4">
+				<img src="{{ url_for('static', filename='illinois-white.png') }}" style="width:25%; height:25%">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<ul class="nav nav-tabs nav-justified" role="tablist">
+		<li class="active"><a href="" id="week"  data-toggle="tab">Week at a glance</a></li>
+		<li><a href="" id="concise" data-toggle="tab">Concise View</a></li>
+		<li><a href="" id="detail" data-toggle="tab">Detailed View</a></li>
+	</ul>
+</div>
+<br>
+<div class="container-fluid">
+	<div id="week-display"></div>
+	<div id="concise-display">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>CRN</th>
+					<th>Course</th>
+					<th>Title</th>
+					<th>Campus</th>
+					<th>Credits</th>
+					<th>Level</th>
+					<th>Start Date</th>
+					<th>End Date</th>
+					<th>Days</th>
+					<th>Time</th>
+					<th>Location</th>
+					<th>Instructor</th>
+				</tr>
+			</thead>
+			<tbody id="tableBody">
+			</tbody>
+		</table>
+	</div>
+	<div id="detail-display"></div>
+	<br>
+	<div class="container">
+		<button class="btn btn-lg btn-block btn-default">Add/Drop Classes</button>
+		<button class="btn btn-lg btn-block btn-primary">Change Credit Hours</button>
+	</div>
+</div>
+
+<script>
+	var pulled = {{ userData|safe }}
+</script>
+{% endblock %}

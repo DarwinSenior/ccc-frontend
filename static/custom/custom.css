@@ -1,0 +1,175 @@
+.navbar-custom {
+	background-color: #003366;
+	border-bottom-color: #ff8000;
+}
+.navbar-custom .navbar-brand {
+	color: #ecf0f1;
+}
+.navbar-custom .navbar-brand:hover, 
+.navbar-custom .navbar-brand:focus {
+	color: #ecf0f1;
+}
+.navbar-custom .navbar-text {
+	color: #ecf0f1;
+}
+.navbar-custom .navbar-nav > li > a {
+	color: #ecf0f1;
+}
+.navbar-custom .navbar-nav > li > a:hover, 
+.navbar-custom .navbar-nav > li > a:focus {
+	color: #ecf0f1;
+	background-color: #ff8000;
+}
+.navbar-custom .navbar-nav > .active > a, 
+.navbar-custom .navbar-nav > .active > a:hover, 
+.navbar-custom .navbar-nav > .active > a:focus {
+	color: #ecf0f1;
+	background-color: #ff8000;
+}
+.navbar-custom .navbar-nav > .open > a, 
+.navbar-custom .navbar-nav > .open > a:hover, 
+.navbar-custom .navbar-nav > .open > a:focus {
+	background-color: #ff8000;
+}
+.navbar-custom .navbar-toggle {
+	border-color: #ff8000;
+}
+.navbar-custom .navbar-toggle:hover, 
+.navbar-custom .navbar-toggle:focus {
+	background-color: #ff8000;
+}
+.navbar-custom .navbar-toggle .icon-bar {
+	background-color: #ecf0f1;
+}
+.navbar-custom .navbar-collapse,
+.navbar-custom .navbar-form {
+	border-color: #ecf0f1;
+}
+.navbar-custom .navbar-link {
+	color: #ecf0f1;
+}
+.navbar-custom .navbar-link:hover {
+	color: #ecf0f1;
+}
+
+@media (max-width: 767px) {
+	.navbar-custom .navbar-nav .open .dropdown-menu > li > a {
+		color: #ecf0f1;
+	}
+	.navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover, 
+	.navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus {
+		color: #ecf0f1;
+	}
+	.navbar-custom .navbar-nav .open .dropdown-menu > .active > a, 
+	.navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover, 
+	.navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus {
+		color: #ecf0f1;
+		background-color: #ff8000;
+	}
+}
+.form-control-orange {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ff8000;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-control-orange:focus {
+  border-color: #003366;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+.jumbotron-orange {
+  padding: 30px;
+  margin-bottom: 30px;
+  color: white;
+  background-color: #ff8000;
+}
+.jumbotron-orange h1,
+.jumbotron-orange .h1 {
+  color: inherit;
+}
+.jumbotron-orange p {
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-weight: 200;
+}
+.jumbotron-orange > hr {
+  border-top-color: #d5d5d5;
+}
+.container .jumbotron-orange {
+  border-radius: 6px;
+}
+.jumbotron-orange .container {
+  max-width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .jumbotron-orange {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .container .jumbotron-orange {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+  .jumbotron-orange h1,
+  .jumbotron-orange .h1 {
+    font-size: 63px;
+  }
+}
+.panel-hard {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+.panel-darkBlue {
+  border-color: #003366;
+}
+.panel-darkBlue > .panel-heading {
+  color: #fff;
+  background-color: #003366;
+  border-color: #003366;
+}
+.panel-darkBlue > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #003366;
+}
+.panel-darkBlue > .panel-heading .badge {
+  color: #003366;
+  background-color: #fff;
+}
+.panel-darkBlue > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #003366;
+}
+.fc-event-time {
+  display: none;
+}
+@media (min-width: 768px) {
+  .container-med {
+    width: 1150px;
+  }
+}
+@media (min-width: 992px) {
+  .container-med {
+    width: 1370px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-med {
+    width: 1570px;
+  }
+}

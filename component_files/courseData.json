@@ -1,0 +1,31 @@
+{
+	"Subject": "Asian American Studies",
+	"Courses": [
+		{
+			"ID": "AAS 100",
+			"Title": "Intro to Asian American Studies",
+			"Credits": "3.000"
+		},
+		{
+			"ID": "AAS 120",
+			"Title": "Intro to Asian American Pop Culture",
+			"Credits": "3.000"
+		},
+		{
+			"ID": "AAS 215",
+			"Title": "US Citizenship Comparatively",
+			"Credits": "3.000"
+		},
+		{
+			"ID": "AAS 250",
+			"Title": "Asian American Ethnic Groups",
+			"Credits": "3.000"
+		},
+		{
+			"ID": "AAS 265",
+			"Title": "Politics of Hip Hop",
+			"Credits": "3.000"
+		}
+
+	]
+}
